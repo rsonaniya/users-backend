@@ -6,8 +6,8 @@ exports.getAllusers = async (req, res) => {
     const excludeFields = ["sort", "limit", "page", "fields"];
 
     excludeFields.forEach((el) => delete queryString[el]);
-    console.log(queryString);
-    let query = User.find(queryString);
+
+    let query = User.find(queryString).select("-__v");
 
     const users = await query;
     res.status(200).json({
