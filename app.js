@@ -12,7 +12,9 @@ app.get("/", (req, res) => {
 app.use("/api/v1/users", userRouter);
 
 app.use((req, res) => {
-  res.status(404).send("Error:Route not found");
+  res.status(404).json({
+    error: "No route found",
+  });
 });
 
 module.exports = app;
