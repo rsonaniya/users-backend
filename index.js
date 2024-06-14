@@ -7,6 +7,6 @@ const DB = process.env.DB;
 
 mongoose.connect(DB).then(() => console.log("Connection to DB is successfull"));
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, "127.0.0.1", () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log("server started at port", PORT);
 });
